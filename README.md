@@ -31,3 +31,4 @@ javascript-fundamentals/
 ├── mouse-hovering/   # Mini project: Mouse event example
 │
 └── README.md         # Project documentation
+
