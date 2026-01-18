@@ -1,0 +1,54 @@
+// What is Document in javascript:
+// When your HTML page loads in the browser, JavaScript creates an 
+// object called document that represents your entire webpage. Think of 
+// it like JavaScript's way of 'seeing' your HTML.
+
+// console.log(document);
+
+
+
+// What is querySelector?
+// querySelector is like a search function. 
+// You tell it what element you want to find in your HTML, and it finds it for you
+
+// Example:
+// document.querySelector('#myButton')
+// document.querySelector('.card')
+// document.querySelector('p')
+
+
+
+// What is addEventListener?
+// addEventListener is a way to tell JavaScript to 'listen' for something
+// to happen on your webpage, like a button click. When that thing happens,
+// JavaScript will run some code that you provide.
+
+// Example:
+// Listen for clicks
+// button.addEventListener('click', function() {
+
+//     console.log("Button was clicked!");
+// });
+
+// Listen for typing in input
+// input.addEventListener('input', function() {
+//     console.log("User is typing!");
+// });
+
+// Listen for mouse hovering
+// button.addEventListener('mouseenter', function() {
+//     console.log("Mouse is over the button!");
+// });
+
+
+
+
+// What is .textContent?
+// .textContent is a property that lets you read or change the text inside an HTML element.
+// Why .textContent and not just paragraph = "text"?
+// "Because paragraph is the whole element (the <p> tag and everything). 
+// .textContent specifically targets just the text inside it.
+
+
+// Example:
+// paragraph.textContent = "New text here!";    

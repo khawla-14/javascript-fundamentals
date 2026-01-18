@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Exercise</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .learn-more {
+            color: #667eea;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            border-bottom: 2px dotted #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .learn-more:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: #2d3748;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            line-height: 1.5;
+            z-index: 1000;
+        }
+
+        /* Tooltip arrow */
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: #2d3748;
+        }
+
+        /* When tooltip is visible */
+        .tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Multiple learn-more sections */
+        .info-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Understanding JavaScript Events</h1>
+
+        <div class="info-section">
+            <p>
+                JavaScript can respond to user interactions like clicks, hovers, and keyboard input.
+                <span class="learn-more" id="learnMore1">
+                    Learn more
+                    <span class="tooltip" id="tooltip1">
+                        Events are actions that happen in the browser, like clicking a button or moving your mouse.
+                        JavaScript can "listen" for these events and respond to them!
+                    </span>
+                </span>
+                about how this works.
+            </p>
+        </div>
+
+        <div class="info-section">
+            <p>
+                The DOM (Document Object Model) is how JavaScript sees your HTML.
+                <span class="learn-more" id="learnMore2">
+                    Learn more
+                    <span class="tooltip" id="tooltip2">
+                        Think of the DOM as a tree structure where each HTML element is a branch. JavaScript can climb
+                        this tree and change any branch it wants!
+                    </span>
+                </span>
+                about the DOM.
+            </p>
+        </div>
+
+        <div class="info-section">
+            <p>
+                Event listeners are the key to making interactive websites.
+                <span class="learn-more" id="learnMore3">
+                    Learn more
+                    <span class="tooltip" id="tooltip3">
+                        addEventListener() is like setting an alarm. You tell JavaScript: "When THIS happens, do THAT."
+                        It's how websites become interactive and responsive!
+                    </span>
+                </span>
+                about event listeners.
+            </p>
+        </div>
+    </div>
+
+    <script src="tooltip.js"></script>
+</body>
+
+</html>
