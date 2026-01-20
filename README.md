@@ -19,4 +19,18 @@ It is intended for beginners who are learning JavaScript for the first time.
 ---
 
 ## 📂 Project Structure
+
+```text
+javascript-fundamentals/
+│
+├── index.html        # Main HTML file for examples
+├── script.js         # JavaScript basics and DOM examples
+├── CheatSheet.js     # Simple explanations of key JavaScript & DOM concepts
+│
+├── greeting-app/     # Mini project: Greeting application
+├── mouse-hovering/   # Mini project: Mouse event example
+│
+└── README.md         # Project documentation
+
+
 ...
