@@ -93,34 +93,34 @@
 
 // Part 4: Arrays & DOM Manipulation 
 // Array of items
-const tasks = ["Buy groceries", "Study JavaScript", "Go to gym"];
+// const tasks = ["Buy groceries", "Study JavaScript", "Go to gym"];
 
-let taskList = document.querySelector('#taskList');
+// let taskList = document.querySelector('#taskList');
 
-// Loop through and create li elements
-tasks.forEach(task => {
-    let li = document.createElement('li');  // Create new element
-    li.textContent = task;
-    taskList.appendChild(li);  // Add to the DOM
-});
-console.log(taskList);
+// // Loop through and create li elements
+// tasks.forEach(task => {
+//     let li = document.createElement('li');  // Create new element
+//     li.textContent = task;
+//     taskList.appendChild(li);  // Add to the DOM
+// });
+// console.log(taskList);
 
-// Key JS DOM methods:
-// Creating elements
-let newDiv = document.createElement('div');
-let newP = document.createElement('p');
+// // Key JS DOM methods:
+// // Creating elements
+// let newDiv = document.createElement('div');
+// let newP = document.createElement('p');
 
-// Adding content
-newP.textContent = "Hello";
-newDiv.innerHTML = "<strong>Hello</strong>";  // Careful with this!
+// // Adding content
+// newP.textContent = "Hello";
+// newDiv.innerHTML = "<strong>Hello</strong>";  // Careful with this!
 
-// Adding to DOM
-parent.appendChild(newElement);
-parent.insertBefore(newElement, existingElement);
+// // Adding to DOM
+// parent.appendChild(newElement);
+// parent.insertBefore(newElement, existingElement);
 
-// Removing from DOM
-element.remove();
-parent.removeChild(element);
+// // Removing from DOM
+// element.remove();
+// parent.removeChild(element);
 
 // // Modifying attributes
 // element.setAttribute('class', 'active');
@@ -157,7 +157,7 @@ parent.removeChild(element);
 // console.log(user.name);  // dot notation
 // console.log(user['name']);  // bracket notation
 
-// // Array of objects
+// Array of objects
 // const users = [
 //     { name: "Ahmed", age: 21 },
 //     { name: "Karim", age: 23 },
@@ -169,12 +169,12 @@ parent.removeChild(element);
 //     console.log(user.name + " is " + user.age + " years old");
 // });
 
-// PRACTICAL: User Cards Display
-// const users = [
-//     { name: "Ahmed Benali", role: "Developer", email: "ahmed@dev.dz" },
-//     { name: "Karim Mansouri", role: "Designer", email: "karim@design.dz" },
-//     { name: "Sara Ziani", role: "Manager", email: "sara@manage.dz" }
-// ];
+// // PRACTICAL: User Cards Display
+const users = [
+    { name: "Ahmed Benali", role: "Developer", email: "ahmed@dev.dz" },
+    { name: "Karim Mansouri", role: "Designer", email: "karim@design.dz" },
+    { name: "Sara Ziani", role: "Manager", email: "sara@manage.dz" }
+];
 
 // const container = document.querySelector('#userContainer');
 
@@ -182,24 +182,24 @@ parent.removeChild(element);
 //     // Create card
 //     const card = document.createElement('div');
 //     card.className = 'user-card';
-    
+
 //     // Build card HTML
 //     card.innerHTML = `
 //         <h3>${user.name}</h3>
 //         <p><strong>Role:</strong> ${user.role}</p>
 //         <p><strong>Email:</strong> ${user.email}</p>
 //     `;
-    
+
 //     container.appendChild(card);
 // });
 // Note on .innerHTML:
-// ".innerHTML lets you write HTML as a string. It's convenient but be careful 
+// ".innerHTML lets you write HTML as a string. It's convenient but be careful
 // never use it with user input because of XSS attacks. For now, it's fine for learning."
 
 
 
-// Part 6: Event Object & Advanced Events 
-// javascript// The event object
+// Part 6: Event Object & Advanced Events
+// The event object
 // button.addEventListener('click', function(event) {
 //     console.log(event);  // See all the info about the click
 //     console.log(event.target);  // The element that was clicked
@@ -220,60 +220,56 @@ parent.removeChild(element);
 
 
 
-// Part 7: Template Literals & String Manipulation 
+// Part 7: Template Literals & String Manipulation
 // javascript the Old way
-// let message = "Hello, " + name + "! You are " + age + " years old.";
+let name;
+let age;
 
-// // Modern way (template literals)
-// let message = `Hello, ${name}! You are ${age} years old.`;
+let message1 = "Hello, " + name + "! You are " + age + " years old.";
 
-// // Multi-line strings
-// let html = `
-//     <div class="card">
-//         <h2>${user.name}</h2>
-//         <p>${user.email}</p>
-//     </div>
-// `;
+// Modern way (template literals)
+let message = `Hello, ${name}! You are ${age} years old.`;
+
 
 // // Useful for building HTML dynamically
 
-// Part 8: Array Methods 
+// Part 8: Array Methods
 // Quick review of important array methods for web dev:
-// const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
-// // forEach - loop through
-// numbers.forEach(num => console.log(num));
+// forEach - loop through
+numbers.forEach(num => console.log(num));
 
-// // map - transform array
-// const doubled = numbers.map(num => num * 2);  // [2, 4, 6, 8, 10]
+// map - transform array
+const doubled = numbers.map(num => num * 2);  // [2, 4, 6, 8, 10]
 
-// // filter - filter array
-// const evens = numbers.filter(num => num % 2 === 0);  // [2, 4]
+// filter - filter array
+const evens = numbers.filter(num => num % 2 === 0);  // [2, 4]
 
-// // find - find first match
-// const found = numbers.find(num => num > 3);  // 4
+// find - find first match
+const found = numbers.find(num => num > 3);  // 4
 
-// // some - check if any match
-// const hasEven = numbers.some(num => num % 2 === 0);  // true
+// some - check if any match
+const hasEven = numbers.some(num => num % 2 === 0);  // true
 
-// // every - check if all match
-// const allPositive = numbers.every(num => num > 0);  // true
+// every - check if all match
+const allPositive = numbers.every(num => num > 0);  // true
 // Practical example with DOM:
-// const products = [
-//     { name: "Laptop", price: 50000 },
-//     { name: "Mouse", price: 1500 },
-//     { name: "Keyboard", price: 3000 }
-// ];
+const products = [
+    { name: "Laptop", price: 50000 },
+    { name: "Mouse", price: 1500 },
+    { name: "Keyboard", price: 3000 }
+];
 
-// // Filter expensive products
-// const expensive = products.filter(p => p.price > 2000);
+// Filter expensive products
+const expensive = products.filter(p => p.price > 2000);
 
-// // Display them
-// expensive.forEach(product => {
-//     const div = document.createElement('div');
-//     div.textContent = `${product.name}: ${product.price} DZD`;
-//     container.appendChild(div);
-// });
+// Display them
+expensive.forEach(product => {
+    const div = document.createElement('div');
+    div.textContent = `${product.name}: ${product.price} DZD`;
+    container.appendChild(div);
+});
 
 // FINAL PROJECT FOR SESSION 2: Product Filter/Search
 // Combines everything since it covers:
