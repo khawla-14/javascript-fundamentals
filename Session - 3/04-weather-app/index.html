@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Added # */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333; /* Added # */
+            margin-bottom: 30px;
+        }
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd; /* Added # */
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 25px;
+            background: #667eea; /* Added # */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #loading { /* Added # */
+            text-align: center;
+            color: #666;
+            display: none;
+        }
+        #error { /* Added # */
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+        .weather-info {
+            display: none;
+            text-align: center;
+        }
+        .temperature {
+            font-size: 64px;
+            font-weight: bold;
+            color: #667eea; /* Added # */
+        }
+        .detail-item {
+            background: #f8f9fa; /* Added # */
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body> 
+    <div class="container">
+        <h1>🌤️ Weather App</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="searchButton">Search</button>
+        </div>
+        
+        <p id="loading">Loading...</p>
+        <div id="error"></div>
+        
+        <div class="weather-info" id="weatherInfo">
+            <div class="city-name" id="cityName"></div>
+            <div class="temperature" id="temperature"></div>
+            <div class="description" id="description"></div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <div class="detail-label">Feels Like</div>
+                    <div class="detail-value" id="feelsLike"></div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Humidity</div>
+                    <div class="detail-value" id="humidity"></div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Wind Speed</div>
+                    <div class="detail-value" id="windSpeed"></div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Pressure</div>
+                    <div class="detail-value" id="pressure"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
